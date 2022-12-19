@@ -43,16 +43,14 @@ public class Main {
     public static void findMissingNumber(int[] ints) {
         int n = ints.length;
         int sum = ((n + 1) * (n + 2)) / 2;
-        for (int i = 0; i < n; i++)
-            sum -= ints[i];
+        for (int anInt : ints) sum -= anInt;
         System.out.println("Missing Number is " + sum);
     }
 
     public static void findDuplicateNumber(int[] ints) {
         int n = ints.length;
         int sum = ((n + 1) * (n + 2)) / 2;
-        for (int i = 0; i < n; i++)
-            sum -= ints[i];
+        for (int anInt : ints) sum -= anInt;
         System.out.println("Duplicate Number is " + sum);
     }
 
@@ -76,16 +74,73 @@ public class Main {
         }
     }
 
+    public static void arrangeArray(int[] ints) {
+        int count = 0;
+        int n = ints.length;
+
+        for (int i = 0; i < n; i++) {
+            if (ints[i] == 0) {
+                count++;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (i < count) {
+                ints[i] = 0;
+            } else {
+                ints[i] = 1;
+            }
+        }
+        System.out.println("Arranged Array: " + Arrays.toString(ints));
+    }
+
+    public static void findMaxVar(int a, int b, int c) {
+        if (a > b && a > c) {
+            System.out.println("Integer a is Max.");
+        } else if (b > a && b > c) {
+            System.out.println("Integer b is Max.");
+        } else if (c > a && c > b) {
+            System.out.println("Integer c is Max.");
+        } else if ((a == b) && (b == c) && (a == c)) {
+            System.out.println("Integer a, b and c all are same.");
+        } else if (a == b) {
+            System.out.println("Integer a and b both are same.");
+        } else if (b == c) {
+            System.out.println("Integer b and c both are same.");
+        } else if (a == c) {
+            System.out.println("Integer a and c both are same.");
+        }
+    }
+
+    public static void rightTriangle(int n) {
+        int i, j;
+        for(i=0; i<n; i++)
+        {
+            System.out.print(" ");
+        }
+        for(j=0; j<=i; j++)
+        {
+            System.out.print("* ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         System.out.println("Hello there!");
         int[] ints = {2, 91, 1, 33, 34, 10};
         int[] ints1 = {2, 7, 1, 4, 5, 3};
         int[] ints2 = {2, 7, 3, 4, 5, 3};
+        int[] ints3 = {0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1,};
         int sum = 3;
+        int a = 10;
+        int b = 10;
+        int c = 100;
         findPair(ints, sum);
         findSecondMax(ints1);
         findMissingNumber(ints1);
         findDuplicateNumber(ints2);
         binarySearch(ints1, 3);
+        arrangeArray(ints3);
+        findMaxVar(a, b, c);
+        rightTriangle(5);
     }
 }
