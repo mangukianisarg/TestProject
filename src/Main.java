@@ -111,15 +111,79 @@ public class Main {
         }
     }
 
-    public static void rightTriangle(int n) {
+    public static void rightStarTriangle(int n) {
         int i, j;
-        for(i=0; i<n; i++)
-        {
-            System.out.print(" ");
+        for (i = 0; i <= n; i++) {
+            for (j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
         }
-        for(j=0; j<=i; j++)
-        {
-            System.out.print("* ");
+        System.out.println();
+    }
+
+    public static void rightNumberTriangle(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static void numberTriangle(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static void numberPattern(int n) {
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static void sequenceNumberPattern(int n) {
+        int value = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(value + " ");
+                value++;
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static void oneZeroPattern(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (j % 2 == 0) {
+                    System.out.print(0 + " ");
+                } else {
+                    System.out.print(1 + " ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static void leftStartTriangle(int n) {
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println();
         }
         System.out.println();
     }
@@ -141,6 +205,13 @@ public class Main {
         binarySearch(ints1, 3);
         arrangeArray(ints3);
         findMaxVar(a, b, c);
-        rightTriangle(5);
+        rightStarTriangle(5);
+        rightNumberTriangle(5);
+        numberTriangle(5);
+        numberPattern(5);
+        sequenceNumberPattern(5);
+        oneZeroPattern(5);
+        leftStartTriangle(5);
+
     }
 }
